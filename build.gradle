@@ -23,6 +23,12 @@ application {
     mainClass = 'circus.Circus'
 }
 
+jar {
+    manifest {
+        attributes 'Main-Class': application.mainClass.get()
+    }
+}
+
 checkstyle {
     toolVersion = '14.1.0'
 }
