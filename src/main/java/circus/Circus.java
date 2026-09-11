@@ -5,8 +5,13 @@ import circus.equipment.Cannon;
 import circus.equipment.Ladder;
 
 import circus.animal.Tiger;
+
+import java.util.Arrays;
+import java.util.ArrayList;
+
 import circus.animal.Animal;
 import circus.animal.Duck;
+import circus.animal.Elephant;
 import circus.animal.Parrot;
 
 public class Circus {
@@ -41,7 +46,22 @@ public class Circus {
         return total;
     }
 
+    private static void printAllAnimals(ArrayList<Animal> animals) {
+        for (Animal a: animals) {
+            System.out.println(a);
+        }
+    }
+
     public static void main(String[] args) {
+        for (Animal a: animals) {
+            System.out.println(a);
+        }
+        ArrayList<Animal> animalArrayList = new ArrayList<>(Arrays.asList(animals));
+
+        animalArrayList.add(new Elephant("StrongOne"));
+        System.out.println("Number of animals: " + animalArrayList.size());
+        printAllAnimals(animalArrayList);
+
         makeAnimalsTalk();
         System.out.println("Total value of animals " + calculateAssetValue(animals));
         System.out.println("Total value of equipments " + calculateAssetValue(equipments));
